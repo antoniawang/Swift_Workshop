@@ -60,3 +60,12 @@ func sayGoodBye(personName: String) -> String
 
 sayGoodBye("Fermi")
 sayGoodBye("Fabby")
+
+class MediaItems {
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+    
+    
+}

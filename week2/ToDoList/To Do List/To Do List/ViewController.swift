@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.reloadData()
+//        tableView.reloadData()
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -52,6 +52,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             toDoListDescLabel.text = ""
         }
         cell.selectionStyle = .None
+        cell.backgroundColor = colorForIndex(indexPath.row)
+
         return cell
 
     }
@@ -69,7 +71,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tableView.reloadData()
         }
     }
-
+    
+    func colorForIndex(index: Int) -> UIColor {
+        let itemCount = items.count - 1
+        let val = (CGFloat(index) / CGFloat(itemCount)) * 0.6
+        return UIColor(red: 0.5, green: val, blue: 1.0, alpha: 0.5)
+    }
 
 }
 
